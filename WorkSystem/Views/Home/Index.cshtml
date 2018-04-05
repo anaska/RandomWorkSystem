@@ -1,0 +1,27 @@
+﻿@model WorkSystem.ViewModels.EmployeesVewModel
+
+<p>
+    Current Day: @Model.Timekeep.CurrentDay
+</p>
+
+<p>
+    Current Week: @Model.Timekeep.CurrentWeek
+</p>
+
+@if (Model.Employees.Count > 0)
+{
+    <table>
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+        </tr>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@Html.DisplayFor(e => employee.Id)</td>
+                <td>@Html.DisplayFor(e => employee.Name)</td>
+            </tr>
+        }
+    </table>
+}
+    @Html.ActionLink("Get Employees", "GetNextEmployees", "Home")

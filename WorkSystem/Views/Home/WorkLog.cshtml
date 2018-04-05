@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WorkSystem.Models.WorkLog>
+
+<h2>Work Log</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Week)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastDayWorked)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Week)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastDayWorked)
+        </td>
+    </tr>
+}
+
+</table>
